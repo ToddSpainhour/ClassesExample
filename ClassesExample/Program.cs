@@ -1,6 +1,7 @@
 ﻿using ClassesExample.Animals;
 using System;
-
+using System.Drawing;
+using System.Globalization;
 
 namespace ClassesExample
 
@@ -16,13 +17,37 @@ namespace ClassesExample
             var bob = new Chicken("Bob");
 
             chicken.Name = "Liza";
-            // bob.Name = "Bob";
+            bob.Name = "Bob";
 
             chicken.Peck("corn");
             bob.Peck("Watermelon");
 
+            bob.Peck();
+
             Console.WriteLine($"{chicken.Name} and {bob.Name} are proud chickens.");
 
+            var llama = new Llama(3, "brown");
+            llama.Dye("Blue");
+
+
+            // object initializer syntax
+            //var cat = new Cat()
+            //{
+            //    IsFeral = true,
+            //    Color = CatColor.Grey,
+            //    BestFriend = bob
+            //};
+
+
+            var cat = new Cat();
+            // cat.Color = CatColor.Grey;
+            cat.Color = CatColor.Black;
+            cat.BestFriend = bob;
+
+          
+            Console.WriteLine($"The cat is {cat.Color}");
+
+            cat.HaveASnack();
 
 
             Console.Read();
@@ -46,3 +71,4 @@ namespace ClassesExample
 // hitting tab to auto complete adds the 'using' up top
 // new Chicken () - the parenthesis says give me a copy of this. called a constructor
 // without making it a variable it is constructed to memory and instantly goes away
+// object initializer syntax
